@@ -5,10 +5,10 @@ mod controller;
 mod config;
 
 use controller::clientes_corp_controller::clientes_corp_router;
-use controller::proyectos_controller::proyectos_router;
-use controller::desarrolladores_controller::desarrolladores_router;
-use controller::tareas_controller::tareas_router;
-use controller::asignaciones_controller::asignaciones_router;
+//use controller::proyectos_controller::proyectos_router;
+//use controller::desarrolladores_controller::desarrolladores_router;
+//use controller::tareas_controller::tareas_router;
+//use controller::asignaciones_controller::asignaciones_router;
 use config::config::crear_pool;
 
 #[tokio::main]
@@ -31,8 +31,8 @@ async fn main() {
 
 fn unificar_routers(pool: sqlx::PgPool) -> axum::Router {
     clientes_corp_router(pool.clone())
-        .merge(proyectos_router(pool.clone()))
-        .merge(desarrolladores_router(pool.clone()))
-        .merge(tareas_router(pool.clone()))
-        .merge(asignaciones_router(pool.clone()))
+        //.merge(proyectos_router(pool.clone()))
+        //.merge(desarrolladores_router(pool.clone()))
+        //.merge(tareas_router(pool.clone()))
+        //.merge(asignaciones_router(pool.clone()))
 }
